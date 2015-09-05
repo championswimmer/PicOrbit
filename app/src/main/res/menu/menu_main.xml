@@ -6,6 +6,10 @@
         android:icon="@android:drawable/ic_menu_camera"
         android:title="Capture Photo"
         app:showAsAction="always"/>
+    <item android:id="@+id/action_view"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="View Photos"
+        app:showAsAction="always"/>
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
