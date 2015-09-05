@@ -1,5 +1,6 @@
 package com.pennapps.picorbit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,13 +10,15 @@ import com.parse.ui.ParseLoginBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
+    Intent bServIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        ParseLoginBuilder builder = new ParseLoginBuilder(MainActivity.this);
-//        startActivityForResult(builder.build(), 0);
+        bServIntent = new Intent(this, BeaconDetectionService.class);
+        startService(bServIntent);
     }
 
     @Override
@@ -38,5 +41,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(bServIntent);
     }
 }

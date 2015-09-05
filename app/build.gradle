@@ -42,4 +42,5 @@ dependencies {
     compile 'com.parse.bolts:bolts-android:1.2.1'
     compile 'com.facebook.android:facebook-android-sdk:4.3.0'
     compile project(':ParseLoginUI')
+    compile 'org.altbeacon:android-beacon-library:2.5.1'
 }
